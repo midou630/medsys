@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nouvelle ordonnance</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles2.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">🩺 MedSys</div>
+
+    <nav>
+      <a href="../index.html"><i class="fa fa-grid-2"></i> Tableau de bord</a>
+      <a href="#" class="active"><i class="fa fa-file-medical"></i> Ordonnance</a>
+      <a href="new-analysis.html"><i class="fa fa-flask"></i> Analyses</a>
+      <a href="new-imaging.html"><i class="fa fa-x-ray"></i> Imagerie</a>
+      <a href="patients.html"><i class="fa fa-user-injured"></i> Patients</a>
+      <a href="history.html"><i class="fa fa-folder"></i> Archives</a>
+    </nav>
+
+    <div class="bottom">
+      <small>MedSys v1</small>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <h2>Nouvelle ordonnance</h2>
+    </header>
+
+    <!-- FORM CARD -->
+    <div class="card">
+
+      <h3>🧍 Informations du patient</h3>
+
+      <input type="text" placeholder="Nom du patient">
+      <input type="number" placeholder="Âge">
+
+      <select>
+        <option>Sexe</option>
+        <option>Masculin</option>
+        <option>Féminin</option>
+      </select>
+
+    </div>
+
+    <!-- MEDICATION -->
+    <div class="card">
+
+      <h3>💊 Médicaments intelligents</h3>
+
+      <!-- SEARCH + DROPDOWN WRAPPER -->
+      <div style="position:relative;">
+
+        <input
+          type="text"
+          id="searchDrug"
+          placeholder="🔍 Rechercher un médicament..."
+          onfocus="openDropdown()"
+          oninput="filterDrugs()"
+          autocomplete="off"
+        >
+
+        <!-- DROPDOWN -->
+        <div id="drugDropdown" class="dropdown hidden"></div>
+
+      </div>
+
+      <!-- BUTTON ADD MANUAL -->
+      <button class="btn" onclick="showManualForm()">
+        ➕ Ajouter manuellement
+      </button>
+
+      <!-- MANUAL FORM -->
+      <div id="manualForm" class="manual-form hidden">
+
+        <input id="mName" placeholder="Nom du médicament">
+
+        <div class="grid-2">
+          <input id="mDose" placeholder="Dose">
+          <select id="mUnit">
+            <option>mg</option>
+            <option>g</option>
+            <option>ml</option>
+            <option>UI</option>
+          </select>
+        </div>
+
+        <select id="mType">
+          <option>Comprimé</option>
+          <option>Injection</option>
+          <option>Gel</option>
+        </select>
+
+        <button class="btn" onclick="addManualDrug()">
+          Ajouter
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- LIST -->
+    <div class="card">
+
+      <h3>📋 Liste des médicaments</h3>
+      <div id="drugBox"></div>
+
+    </div>
+
+    <!-- ACTION -->
+    <div class="card">
+
+      <button class="btn" onclick="savePrescription()">
+        🖨️ Enregistrer & Imprimer
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="../services/csvService.js"></script>
+<script src="../utils/helpers.js"></script>
+<script src="new-prescription.js"></script>
+
+</body>
+</html>

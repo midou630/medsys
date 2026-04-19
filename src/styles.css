@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f6f8fc;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.sidebar nav a {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: #1e293b;
+  color: white;
+}
+
+.bottom {
+  margin-top: auto;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card i {
+  font-size: 26px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 5px 0;
+}

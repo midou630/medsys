@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Tableau de bord médical</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">
+      🩺 MedSys
+    </div>
+
+    <nav>
+      <a href="#" class="active"><i class="fa fa-grid-2"></i> Tableau de bord</a>
+      <a href="pages/new-prescription.html"><i class="fa fa-file-medical"></i> Nouvelle ordonnance</a>
+      <a href="pages/new-analysis.html"><i class="fa fa-flask"></i> Analyses</a>
+      <a href="pages/new-imaging.html"><i class="fa fa-x-ray"></i> Imagerie</a>
+      <a href="pages/patients.html"><i class="fa fa-user-injured"></i> Patients</a>
+      <a href="pages/history.html"><i class="fa fa-folder"></i> Archives</a>
+    </nav>
+
+    <div class="bottom">
+      <small>Système médical v1</small>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <h2>Tableau de bord</h2>
+      <div class="profile">
+        👨‍⚕️ Médecin
+      </div>
+    </header>
+
+    <!-- CARDS -->
+    <section class="cards">
+
+      <div class="card">
+        <i class="fa fa-file-medical"></i>
+        <h3>Nouvelle ordonnance</h3>
+        <p>Créer une ordonnance médicale pour le patient</p>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-flask"></i>
+        <h3>Demande d’analyse</h3>
+        <p>Créer une demande d’analyses médicales</p>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-x-ray"></i>
+        <h3>Demande d’imagerie</h3>
+        <p>Créer une demande d’examen radiologique</p>
+      </div>
+
+      <div class="card">
+        <i class="fa fa-user-group"></i>
+        <h3>Patients</h3>
+        <p>Liste des patients enregistrés</p>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

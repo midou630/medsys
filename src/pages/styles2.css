@@ -1,0 +1,157 @@
+/* ===== MODERN MEDICAL UI EXTENSION (FIXED) ===== */
+
+/* IMPORTANT RESET TO AVOID OVERFLOW */
+* {
+  box-sizing: border-box;
+}
+
+/* CARD */
+.card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+/* TITLES */
+.card h3 {
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* LABEL */
+label {
+  font-size: 13px;
+  color: #334155;
+  display: block;
+  margin-top: 8px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  background: #f8fafc;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #1f6feb; /* نفس أزرق الداشبورد */
+  box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.15);
+  background: #ffffff;
+}
+
+/* BUTTON (MATCH DASHBOARD BLUE) */
+.btn {
+  background: #0f172a; /* الأزرق الغامق تاع الداشبورد */
+  color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
+
+/* GRID FIX (no overlap) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+/* DRUG LIST ITEMS */
+#drugBox div {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f1f5f9;
+  margin-top: 8px;
+  font-size: 14px;
+  border-left: 3px solid #1f6feb;
+}
+
+/* FIX PAGE SPACING */
+.main {
+  padding-bottom: 40px;
+}
+
+/* ANIMATION LIGHT */
+.card {
+  animation: fadeIn 0.25s ease-in-out;
+}
+.drug-list {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.drug-item {
+  padding: 10px;
+  background: #f1f5f9;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  border-left: 3px solid #0f172a;
+  transition: 0.2s;
+}
+
+.drug-item:hover {
+  background: #e2e8f0;
+  transform: translateX(3px);
+}
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 999;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  transition: 0.2s;
+}
+
+.dropdown div:hover {
+  background: #1f6feb;
+  color: white;
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+/* MANUAL FORM */
+.manual-form {
+  margin-top: 15px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

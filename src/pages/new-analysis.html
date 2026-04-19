@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nouvelle demande</title>
+
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles2.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">🩺 MedSys</div>
+
+    <nav>
+      <a href="../index.html"><i class="fa fa-grid-2"></i> Tableau de bord</a>
+      <a href="new-prescription.html"><i class="fa fa-file-medical"></i> Ordonnance</a>
+      <a href="new-analysis.html" class="active"><i class="fa fa-flask"></i> Analyses</a>
+      <a href="new-imaging.html"><i class="fa fa-x-ray"></i> Imagerie</a>
+      <a href="patients.html"><i class="fa fa-user-injured"></i> Patients</a>
+      <a href="history.html"><i class="fa fa-folder"></i> Archives</a>
+    </nav>
+
+    <div class="bottom">
+      <small>MedSys v1</small>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <h2>Nouvelle demande médicale</h2>
+    </header>
+
+    <!-- PATIENT -->
+    <div class="card">
+
+      <h3>🧍 Informations du patient</h3>
+
+      <input type="text" placeholder="Nom du patient">
+      <input type="number" placeholder="Âge">
+
+      <select>
+        <option>Sexe</option>
+        <option>Masculin</option>
+        <option>Féminin</option>
+      </select>
+
+    </div>
+
+    <!-- SMART SEARCH (Analyses / Imagerie) -->
+    <div class="card">
+
+      <h3 id="title">🧪 Analyses intelligentes</h3>
+
+      <div style="position:relative;">
+
+        <input
+          type="text"
+          id="searchItem"
+          placeholder="🔍 Rechercher..."
+          onfocus="openDropdown()"
+          oninput="filterItems()"
+          autocomplete="off"
+        >
+
+        <div id="itemDropdown" class="dropdown hidden"></div>
+
+      </div>
+
+      <button class="btn" onclick="showManualForm()">
+        ➕ Ajouter manuellement
+      </button>
+
+      <div id="manualForm" class="manual-form hidden">
+
+        <input id="mName" placeholder="Nom">
+
+        <button class="btn" onclick="addManualItem()">
+          Ajouter
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- LIST -->
+    <div class="card">
+
+      <h3>📋 Liste</h3>
+      <div id="itemBox"></div>
+
+    </div>
+
+    <!-- ACTION -->
+    <div class="card">
+
+      <button class="btn" onclick="saveRequest()">
+        🖨️ Enregistrer & Imprimer
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="../services/csvService.js"></script>
+<script src="../utils/helpers.js"></script>
+<script src="new-analysis.js"></script>
+
+</body>
+</html>
